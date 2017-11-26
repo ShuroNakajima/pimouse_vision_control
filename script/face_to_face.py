@@ -13,8 +13,8 @@ class FaceToFace():
         self.image_org = None
         self.pub = rospy.Publisher("face", Image, queue_size=1)
         self.cmd_vel = rospy.Publisher('/cmd_vel', Twist, queue_size=1)
-#        rospy.on_shutdown(rospy.ServiceProxy('/motor_off', Trigger).call)
-#        rospy.ServiceProxy('/motor_on',Trigger).call()
+        rospy.on_shutdown(rospy.ServiceProxy('/motor_off', Trigger).call)
+        rospy.ServiceProxy('/motor_on',Trigger).call()
 
     def monitor(self, rect, org):
         if rect is not None:
