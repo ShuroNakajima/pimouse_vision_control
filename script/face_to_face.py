@@ -35,7 +35,10 @@ class FaceToFace():
         org = self.image_org
 
         gimg = cv2.cvtColor(org, cv2.COLOR_BGR2GRAY)
-        classifier = "/opt/ros/kinetic/share/OpenCV-3.2.0-dev/haarcascades/haarcascade_frontalface_default.xml"
+#for real machine        
+#        classifier = "/opt/ros/kinetic/share/OpenCV-3.2.0-dev/haarcascades/haarcascade_frontalface_default.xml"
+#for travis        
+        classifier = "/usr/share/opencv/haarcascades/haarcascade_frontalface_default.xml" 
         cascade = cv2.CascadeClassifier(classifier)
         face = cascade.detectMultiScale(gimg, 1.1, 1, cv2.CASCADE_FIND_BIGGEST_OBJECT)
 
