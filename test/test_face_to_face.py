@@ -40,7 +40,7 @@ class VisionTest(unittest.TestCase):
         self.assertFalse(turn is None, "direction is not fixed. l:" + str(l_turn_rate) + "r:" + str(r_turn_rate))
         self.assertEqual(sys.argv[1], turn, "wrong direction. l:" + str(l_turn_rate) + "r:" + str(r_turn_rate))
 
-if __name__='__main__':
+if __name__=='__main__':
     rospy.init_node('test_face_to_face')
     rostest.rosrun('pimouse_vision_control', 'test_face_to_face', VisionTest)
     
